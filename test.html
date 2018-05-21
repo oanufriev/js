@@ -7,9 +7,17 @@
         <script>
             const adata = ['First', 'Second', 'Third'];
             const odata = [{a: 'The first'}, {a: 'The second'}, {a: 'The third'}, {a: 'The fourth'}];
+            const tabdata = [
+                {cola: 'Cell A1', colb: 'Cell B1', colc: 'Cell C1'},
+                {cola: 'Cell A2', colb: 'Cell B2', colc: null},
+                {cola: 'Cell A3', colb: 'Cell B3', colc: null},
+                {cola: 'Cell A4', colb: 'Cell B4', colc: 'Cell C4'},
+                {cola: 'Cell A5', colb: 'Cell B5', colc: null},
+            ];
             $(function() {
                 $('#hook1').generateList(adata);
                 $('#hook2').generateList(odata, 'a', true);
+                $('#hook3').generateTable(tabdata, {header: {cola: 'First column', colb: 'Second column'}, hidecolumns: ['colc']});
             })
         </script>
     </head>
@@ -20,5 +28,7 @@
         <div id="hook1"></div>
         <h3>From Array of Objects</h3>
         <div id="hook2"></div>
+        <h3>Tab Data</h3>
+        <div id="hook3"></div>
     </body>
 </html>
